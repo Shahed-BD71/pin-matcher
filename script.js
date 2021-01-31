@@ -21,10 +21,14 @@ buttonContainer.addEventListener('click', function(event){
     const digit = event.target.innerText;
     if(isNaN(digit)){
         // handle backspace
+        if (digit === "B" ) {
+            const typedInput = document.getElementById('typed-pin');
+            typedInput.value = typedInput.value.substring(0, typedInput.value.length - 1)
+        }
         // handle clear
         if (digit === "C") {
             const typedInput = document.getElementById('typed-pin');
-            typedInput.value = "";
+            typedInput.value = "" ;
         }
     }
     else {
